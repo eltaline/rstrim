@@ -13,17 +13,17 @@ var (
 // Rstrim: function for remove whitespaces
 func Rstrim(inline string) string {
 
-  var m string
+	var m string
 
-  inline = wOnly.ReplaceAllString(inline, "")
-  inds := lWhite.FindAllStringSubmatch(inline, -1)
+	inline = wOnly.ReplaceAllString(inline, "")
+	inds := lWhite.FindAllStringSubmatch(inline, -1)
 	
-  for i, ind := range inds {
+	for i, ind := range inds {
 
-    if i == 0 {
-		  m = ind[1]
+		if i == 0 {
+			m = ind[1]
 		} else if strings.HasPrefix(ind[1], m) {
-      continue
+			continue
 		} else if strings.HasPrefix(m, ind[1]) {
 			m = ind[1]
 		} else {
@@ -31,12 +31,12 @@ func Rstrim(inline string) string {
 			break
 		}
 
-}
+	}
 
 	if m != "" {
-		  inline = regexp.MustCompile("(?m)^"+m).ReplaceAllString(inline, "")
+		 inline = regexp.MustCompile("(?m)^"+m).ReplaceAllString(inline, "")
 	}
-	
-  return inline
+
+	return inline
 
 }
