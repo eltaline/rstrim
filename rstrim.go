@@ -10,8 +10,8 @@ var (
 	lWhite = regexp.MustCompile("(?m)(^[ \t]*)(?:[^ \t\n])")
 )
 
-// Rstrim: function for remove whitespaces
-func Rstrim(inline string) string {
+// Trim: function for remove whitespaces
+func Trim(inline string) string {
 
 	var m string
 
